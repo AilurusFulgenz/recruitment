@@ -1,0 +1,26 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="filteringRulesApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="./angular.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body ng-controller="FilteringRulesListCtrl">
+  <p>There is {{filteringRules.length}} filtering rules</p>
+  <ul>
+      <li ng-repeat="filteringRule in filteringRules">src={{filteringRule.src}}; dst={{filteringRule.dst}}; port={{filteringRule.port}}</li>
+  </ul>
+  <form>
+      <label for="filteringRule_src">src</label><input type="text" name="src" id="filteringRule_src" ng-model="newFilteringRule.src" /><br />
+      <label for="filteringRule_dst">dst</label><input type="text" name="dst" id="filteringRule_dst" ng-model="newFilteringRule.dst" /><br />
+      <label for="filteringRule_port">port</label><input type="text" name="port" id="filteringRule_port" ng-model="newFilteringRule.port" /><br />
+      <input type="button" value="add rf" ng-click="sendFilteringRule(newFilteringRule)" />
+  </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "recruitment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "/usr/bin/env node index.js",
+    "test": "./node_modules/mocha/bin/mocha ./test/**/*",
+    "docu": "/usr/bin/env jsdoc ./filtering-rule.js -d jsdoc"
+  },
+  "author": "Stormshield",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.16.4"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "mocha": "5.2.0",
+    "supertest": "3.3.0"
+  }
+}

@@ -19,7 +19,9 @@ class FilteringRule {
         this.dst = dst;
         this.port = port;
 
-        this._assertValuesAreCorrect();
+        if (!this._assertValuesAreCorrect()) {
+            throw new Error('Incorrect param in filtering rule property');
+        }
     }
 
     /**
@@ -29,20 +31,20 @@ class FilteringRule {
      */
     _assertValuesAreCorrect () {
         const ipPattern = /^(\d{1,3}\.){3}\d{1,3}$/;
-        const minPort = 1;
-        const maxPort = 65535;
-
+        let minPort = 1;
+        let maxPort = 65535
+        
         if (!this.src.match(ipPattern)) {
             throw new Error(`src value "${this.src}" does not match IP format`);
         }
 
-        if (!this.dst.match(ipPattern)) {
-            throw new Error(`dst value "${this.dst}" does not match IP format`);
-        }
+        if (!this.dst.match(ipPattern))
+        throw new Error(`dst value "${this.dst}" does not match IP format`);
 
-        if (this.port < minPort || this.port > maxPort) {
+        if (this.port < minPort || this.port > maxPort){
             throw new Error(`port value "${this.port}" must be between ${minPort} and ${maxPort}`);
         }
+        return true;
     }
 }
 

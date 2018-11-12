@@ -9,11 +9,15 @@ const FilteringRule = require('../../filtering-rule');
 describe('FilteringRule', function () {
     describe('#contructor', () => {
 
-        const props = {
-            src: '0.0.0.0',
-            dst: '0.0.0.0',
-            port: 1
-        };
+        let props;
+        beforeEach(function () {
+            props = {
+                src: '0.0.0.0',
+                dst: '0.0.0.0',
+                port: 1
+            };
+        });
+        
 
         it('should instanciate a filtering rule with parameters', function () {
             // when
@@ -39,7 +43,7 @@ describe('FilteringRule', function () {
 
             it('with bad port format', function () {
                 // given
-                props.port = 'some invalid IP address';
+                props.port = 'a';
                 // expect
                 expect(() => new FilteringRule(props)).to.throw();
             });

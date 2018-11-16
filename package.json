@@ -6,7 +6,8 @@
   "scripts": {
     "start": "/usr/bin/env node index.js",
     "test": "./node_modules/.bin/mocha ./test/**/*",
-    "docu": "./node_modules/.bin/jsdoc ./filtering-rule.js -d jsdoc"
+    "docu": "./node_modules/.bin/jsdoc ./filtering-rule.js -d jsdoc",
+    "diff": "diff=$(git diff); echo '' >> ./MR-template.md ; echo '```diff' >> ./MR-template.md ; echo \"$diff\" >> ./MR-template.md ; echo '```' >> ./MR-template.md"
   },
   "author": "Stormshield",
   "license": "ISC",

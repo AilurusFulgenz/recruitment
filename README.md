@@ -24,14 +24,6 @@ Si tu lis ça c'est que tu as eu l'excellent réflexe de lire le README. Tu vien
 * *index.js* là on gère le serveur http, mais aussi la collection des règles de filtrage.
 * *package.json* si tu as le moindre doute sur les commandes ou les dépendances...
 
-## Les commandes indispensables
-
-* `npm install` les quelques dépendances qui vont bien (normalement elles sont déjà installées, sinon tu as le droit de te plaindre).
-* `npm test` tester c'est douter... J'ai un doute : tous les tests passent ?
-* `npm run-sript docu` un coup de JsDoc, ça vous dit ?
-* `npm run-sript diff` Pour générer un diff dans le template de merge request `MR-template.md`
-* `npm start` les choses sérieuses : on démarre le serveur sur le port 8080. L'API devient accessible sur [http://127.0.0.1:8080/](http://127.0.0.1:8080/).
-
 ```
 frontApp
     |_index.html
@@ -50,8 +42,22 @@ index.js
 package.json
 ```
 
+## Les commandes indispensables
+
+* `npm install` les quelques dépendances qui vont bien (normalement elles sont déjà installées, sinon tu as le droit de te plaindre).
+* `npm test` tester c'est douter... J'ai un doute : tous les tests passent ?
+* `npm run-sript docu` un coup de JsDoc, ça vous dit ?
+* `npm run-sript diff` Pour générer un diff dans le template de merge request `MR-template.md`
+* `npm start` les choses sérieuses : on démarre le serveur sur le port 8080. L'API devient accessible sur [http://127.0.0.1:8080/](http://127.0.0.1:8080/).
+
 ## API existante
 
 * `GET /filtering-rules/` : Retourne au format JSON toutes les règles de filtrage enregistrées
 * `GET /filtering-rules/:filteringRuleID` : [*Non implémenté*] Retourne la règle de filtrage ayant (😉) l'identifiant filteringRuleID
 * `POST /filtering-rules/` : Si les paramètres sont corrects (format, typage, range de valeurs...), sauvegarde la règle de filtrage envoyée. Accepte une structure JSON du type `{src: <ip source>, dst: <ip dest>, port: <port>}`
+
+## Un peu de GIT...
+
+* créer une branche : `git checkout -b [nom_de_ma_branche]`
+* ajouter des modifications à l'index : `git add [./path/du/fichier]` ou `git add *` (tout ajouter) ou `git add -p` pour valider bloc à bloc
+* commiter `git commit -m "[message]"`

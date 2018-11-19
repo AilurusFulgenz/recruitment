@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(express.static('frontApp'));
 
 app.get('/filtering-rules/', (req, res) => {
-    res.send(getFilteringRulesAsJSON());
+    res.status(200).send(getFilteringRulesAsJSON());
 });
 
 app.get('/filtering-rules/:filteringRuleID', (req, res) => {
@@ -28,7 +28,7 @@ app.get('/filtering-rules/:filteringRuleID', (req, res) => {
 
 app.post('/filtering-rules/', (req, res) => {
     filteringRules.push(new FilteringRule(req.body));
-    res.send(getFilteringRulesAsJSON());
+    res.status(200).send(getFilteringRulesAsJSON());
 });
 
 module.exports = app;

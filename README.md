@@ -46,8 +46,8 @@ package.json
 
 * `npm install` les quelques dépendances qui vont bien (normalement elles sont déjà installées, sinon tu as le droit de te plaindre).
 * `npm test` tester c'est douter... J'ai un doute : tous les tests passent ?
-* `npm run-sript docu` un coup de JsDoc, ça vous dit ?
-* `npm run-sript diff` Pour générer un diff dans le template de merge request `MR-template.md`
+* `npm run-script docu` un coup de JsDoc, ça vous dit ?
+* `npm run-script diff` Pour générer un diff dans le template de merge request `MR-template.md`
 * `npm start` les choses sérieuses : on démarre le serveur sur le port 8080. L'API devient accessible sur [http://127.0.0.1:8080/](http://127.0.0.1:8080/).
 
 ## API existante

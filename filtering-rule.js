@@ -3,7 +3,6 @@
 /**
  * Filtering rule model class
  * defines a firewall's filtering rule
- * see https://en.wikipedia.org/wiki/Firewall_(computing)
  * @class
  */
 class FilteringRule {

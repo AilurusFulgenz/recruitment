@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "/usr/bin/env node index.js",
-    "test": "./node_modules/.bin/mocha ./test/**/*",
+    "start": "echo 'Please visit http://localhost:8080' && /usr/bin/env node index.js",
+    "test": "./node_modules/.bin/mocha --exit ./test/**/*",
     "docu": "./node_modules/.bin/jsdoc ./filtering-rule.js -d jsdoc",
     "diff": "diff=$(git diff); echo '' >> ./MR-template.md ; echo '```diff' >> ./MR-template.md ; echo \"$diff\" >> ./MR-template.md ; echo '```' >> ./MR-template.md"
   },
